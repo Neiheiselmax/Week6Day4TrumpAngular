@@ -1,3 +1,83 @@
+body {
+  background-image: url("");
+  background-repeat: no-repeat;
+  background-size: cover; }
+
+.faceDown {
+  animation: moveFace 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+
+@keyframes moveFace {
+  0% {
+    transform: translateY(0); }
+  100% {
+    transform: translateY(200px); } }
+
+.leftEye {
+  animation: moveLeftEye 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+
+@keyframes moveLeftEye {
+  0% {
+    transform: skew(0deg); }
+  100% {
+    transform: skewY(10deg); } }
+
+.rightEye {
+  animation: moveRightEye 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+
+@keyframes moveRightEye {
+  0% {
+    transform: skew(0deg); }
+  100% {
+    transform: skewY(11deg); } }
+
+.hair {
+  animation: fadeHair 2s;
+  animation-iteration-count: 1;
+  animation-fill-mode: forwards; }
+
+@keyframes fadeHair {
+  0% {
+    transform: skew(0deg); }
+  100% {
+    transform: skewY(10deg); } }
+
+.nose {
+  animation: shake 0.82s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
+  transform: translate3d(0, 0, 0);
+  animation: shake 1s;
+  animation-fill-mode: forwards; }
+
+@keyframes shake {
+  10%, 90% {
+    transform: translate3d(-1px, 0, 0); }
+  20%, 80% {
+    transform: translate3d(2px, 0, 0); }
+  30%, 50%, 70% {
+    transform: translate3d(-4px, 0, 0); }
+  40%, 60% {
+    transform: translate3d(4px, 0, 0); }
+  100% {
+    transform: translateY(200px); } }
+
+.mouth {
+  animation: closeMouth .6s;
+  transform-origin: 80px 160px;
+  animation-iteration-count: 1; }
+
+@keyframes closeMouth {
+  0% {
+    transform: skew(0deg) rotateX(0deg); }
+  50% {
+    transform: skew(19deg) rotateX(80deg); }
+  100% {
+    transform: skew(0deg) rotateX(0deg); } }
+
 .quote {
   font-size: 20px;
   position: absolute;
