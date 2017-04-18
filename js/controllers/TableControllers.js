@@ -3,12 +3,12 @@
 
     angular
         .module('taco')
-        .controller('TableController', function(API) {
+        .controller('TableController', function(API,$timeout) {
 
           const vm = this;
 
-          let svg = document.querySelector('svg');
-
+            let svg = document.querySelector('svg');
+            
 
             let counter = 0;
             svg.addEventListener('click', e =>{
@@ -39,19 +39,17 @@
                 hair.classList.add('hair');
             }
             counter++;
+
             let data = API.getData();
             data.then(function successCallback(response){
                 console.log(response)
                 vm.quote = response.data.value
-            
-            svg.addEventListener('click', e =>{
             let mouth = document.getElementById('layer3');
             mouth.classList.add('mouth');
-            
-            })
+             $timeout(function () {
+            mouth.classList.remove('mouth');
+             }, 650);
             })
         })
-
-
-        });
+    });
 })();
